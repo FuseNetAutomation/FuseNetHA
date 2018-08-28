@@ -1,0 +1,90 @@
+# Home Assistant #
+# Configuration by Nicholas Knight and Gerry Wolfe #
+homeassistant:
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: 322
+  unit_system: imperial
+  time_zone: America/New_York
+  customize: !include customize.yaml
+  packages: !include_dir_named includes/packages/
+
+config:
+
+http:
+  api_password: !secret http_password
+  base_url: !secret base_url
+
+updater:
+
+climate:
+  platform: demo
+
+discovery:
+
+hello_state:
+
+conversation:
+
+history:
+
+logbook:
+
+map:
+
+telegram_bot:
+    - platform: polling
+      api_key: 687376437:AAHvuedOtj968CRTqCB-WJIJZLPYJkys4fs
+      allowed_chat_ids:
+        - 514565869
+
+notify:
+  - name: android
+    platform: fcm-android
+    
+  - name: telegram
+    platform: telegram
+    chat_id: 514565869
+
+weather:
+  - platform: yweather
+
+input_boolean:
+  weather:
+
+############
+# INCLUDES #
+############
+frontend:
+  extra_html_url:
+    - /local/custom_ui/state-card-custom-ui.html
+    - /local/custom_ui/custom-weather-card.html
+    - /local/icons.html
+    - /local/custom_ui/state-card-tiles.html
+  extra_html_url_es5:
+    - /local/custom_ui/state-card-custom-ui-es5.html
+    - /local/custom_ui/custom-weather-card.html
+    - /local/icons.html
+  themes: !include_dir_merge_named themes
+
+group: !include_dir_merge_named includes/groups
+sensor: !include_dir_merge_list includes/sensors
+binary_sensor: !include_dir_merge_list includes/binary
+device_tracker: !include includes/device_trackers.yaml
+media_player: !include_dir_merge_list includes/media_player
+scene: !include includes/scenes.yaml
+script: !include_dir_merge_named includes/scripts/
+camera: !include_dir_merge_list includes/cameras
+weblink: !include includes/weblinks.yaml
+zone: !include_dir_merge_list includes/zones
+switch: !include_dir_merge_list includes/switches
+cover: !include_dir_merge_list includes/covers
+automation old: !include_dir_merge_list includes/automation
+automation: !include automations.yaml
+
+
+panel_custom:
+  - name: hello
+    sidebar_title: Hello World
+    sidebar_icon: mdi:hand-pointing-right
+    url_path: hello

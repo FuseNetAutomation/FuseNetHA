@@ -1,0 +1,25 @@
+  - platform: ping
+    host: 192.168.173.1
+    name: Netgear Router
+
+  - platform: ping
+    host: 192.168.173.2
+    name: Living Room Roku
+
+  - platform: ping
+    host: 192.168.173.7
+    name: Lai's Bedroom Roku
+
+# Containers
+  - platform: ping
+    host: 10.0.3.1
+    name: Home Assistant Container
+  - platform: ping
+    host: 10.0.3.2
+    name: MQTT Container
+  - platform: ping
+    host: 10.0.3.4
+    name: Postgres Container
+  - platform: ping
+    host: 10.0.3.5
+    name: Gitlab Container

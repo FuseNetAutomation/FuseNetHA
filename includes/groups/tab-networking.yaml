@@ -1,0 +1,62 @@
+networking:
+  name: Networking
+  icon: mdi:server-network
+  view: yes
+  entities:
+    - group.qnap
+    - group.device_status
+    - group.speedtest
+    - group.docker_status
+    - group.ip
+    - group.links
+
+speedtest:
+  name: Networking Performance
+  entities:
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    - sensor.speedtest_ping
+    - sensor.processor_use
+    - sensor.memory_free
+    - sensor.disk_free_
+
+ip:
+  name: Public IP
+  entities:
+    - sensor.home_ip
+
+links:
+  name: Links
+  entities:
+    - weblink.router
+
+
+device_status:
+  name: Device Status
+  entities:
+    - binary_sensor.ubiquity_amplifi_router
+    - binary_sensor.living_room_roku
+    - binary_sensor.lais_bedroom_roku
+
+
+docker_status:
+  name: Container Status
+  entities:
+    - binary_sensor.home_assistant_container
+    - binary_sensor.mqtt_container
+    - binary_sensor.gitlab_container
+    - binary_sensor.postgres_container
+
+
+
+
+qnap:
+  name: QNAP NAS
+  entities:
+    - sensor.nas_status
+    - sensor.nas_free_space_container_storage
+    - sensor.nas_memory_usage
+    - sensor.nas_network_link_eth0
+    - sensor.nas_network_down_eth0
+    - sensor.nas_network_up_eth0
+    - sensor.nas_system_temperature

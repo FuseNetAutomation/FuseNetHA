@@ -1,0 +1,49 @@
+## System Module
+
+##################################################
+## Customize
+##################################################
+
+homeassistant:
+  customize:
+    sensor.time_template:
+      icon: mdi:clock
+    sensor.since_last_boot_template:
+      icon: mdi:av-timer
+    sensor.disk_free_:
+      friendly_name: 'Disk Free'
+    # HA related
+    script.restart_ha:
+      icon: mdi:power
+    sensor.version:
+      icon: mdi:mdi:package-variant-closed
+      friendly_name: 'Version'
+
+
+##################################################
+## Sensors
+##################################################
+
+## https://home-assistant.io/components/sensor.systemmonitor/
+sensor:
+  - platform: systemmonitor
+    resources:
+      - type: since_last_boot
+      - type: processor_use
+      - type: memory_free
+      - type: disk_free
+        arg: /
+
+  - platform: template
+    sensors:
+      time_template:
+        friendly_name: 'Time'
+        value_template: '{{ as_timestamp(now()) | timestamp_custom("%d/%m   %H:%M", True) }}'
+      since_last_boot_template:
+        friendly_name: 'Since Last Boot'
+        value_template: >
+          {%- set s = states.sensor.since_last_boot.state.split('.')[0] -%}
+          {{ s }}
+
+  - platform: version
+    name: version

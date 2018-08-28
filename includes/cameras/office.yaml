@@ -1,0 +1,5 @@
+- platform: mjpeg
+  name: Office Camera
+  mjpeg_url: http://192.168.173.6/Streaming/Channels/2/preview
+  username: admin
+  password: PAssword123

@@ -1,0 +1,21 @@
+settings:
+  name: Settings
+  view: yes
+  icon: mdi:settings
+  entities:
+      - group.system
+      - group.automations
+
+
+
+system:
+  name: System
+  entities:
+    - sensor.time_template
+    - sensor.since_last_boot_template
+    - sensor.version
+
+automations:
+  name: Automations
+  entities:
+    - group.all_automations

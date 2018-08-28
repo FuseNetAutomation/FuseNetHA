@@ -1,0 +1,118 @@
+################
+#    Sensors   #
+################
+
+input_boolean.weather:
+  custom_ui_state_card: custom-weather-card
+  config:
+    weather: weather.yweather
+    sun: sun.sun
+
+# Networking
+sensor.processor_use:
+  friendly_name: 'CPU Load'
+  icon: mdi:chip
+sensor.memory_free:
+  friendly_name: 'Memory Usage'
+  icon: mdi:chip
+sensor.disk_free_:
+  friendly_name: 'Disk Usage'
+  icon: mdi:harddisk
+
+sensor.speedtest_ping:
+  icon: mdi:clock-fast
+  friendly_name: 'Ping'
+sensor.speedtest_download:
+  icon: mdi:arrow-down
+  friendly_name: 'Download'
+sensor.speedtest_upload:
+  icon: mdi:arrow-up
+  friendly_name: 'Upload'
+
+sensor.home_ip:
+  icon: mdi:network
+
+
+# Containers
+binary_sensor.home_assistant_container:
+  icon: mdi:docker
+  templates:
+    icon_color: "if (state === 'on') return 'rgb(50,205,50)'; else return 'rgb(220,20,60)';"
+binary_sensor.mqtt_container:
+  icon: mdi:docker
+  templates:
+    icon_color: "if (state === 'on') return 'rgb(50,205,50)'; else return 'rgb(220,20,60)';"
+binary_sensor.gitlab_container:
+  icon: mdi:docker
+  templates:
+    icon_color: "if (state === 'on') return 'rgb(50,205,50)'; else return 'rgb(220,20,60)';"
+binary_sensor.postgres_container:
+  icon: mdi:docker
+  templates:
+    icon_color: "if (state === 'on') return 'rgb(50,205,50)'; else return 'rgb(220,20,60)';"
+
+
+binary_sensor.ubiquity_amplifi_router:
+  icon: mdi:router-wireless
+  templates:
+    icon_color: "if (state === 'on') return 'rgb(50,205,50)'; else return 'rgb(220,20,60)';"
+
+binary_sensor.living_room_roku:
+  icon: mdi:cast
+  templates:
+    icon_color: "if (state === 'on') return 'rgb(50,205,50)'; else return 'rgb(220,20,60)';"
+
+binary_sensor.lais_bedroom_roku:
+  icon: mdi:cast
+  templates:
+    icon_color: "if (state === 'on') return 'rgb(50,205,50)'; else return 'rgb(220,20,60)';"
+
+
+sensor.connected_clients:
+  friendly_name: Connections
+  icon: mdi:lan-connect
+
+
+
+##########################################################
+## NAS
+##########################################################
+
+sensor.nas_status:
+  friendly_name: System Status
+  icon: mdi:nas
+sensor.nas_free_space_container_storage:
+  friendly_name: Container Free Space
+  icon: mdi:harddisk
+sensor.nas_network_link_eth0:
+  friendly_name: Network Link
+sensor.nas_network_down_eth0:
+  friendly_name: Network Download
+sensor.nas_network_up_eth0:
+  friendly_name: Network Upload
+sensor.nas_system_temperature:
+  friendly_name: System Temperature
+
+
+
+################
+# TAB ORDERING #
+################
+group.home:
+  order: 1
+group.living_room:
+  order: 2
+group.office:
+  order: 3
+group.master:
+  order: 4
+group.lais_room:
+  order: 5
+group.networking:
+  order: 6
+group.settings:
+  order: 7
+
+# Media Players
+media_player.lai:
+  friendly_name: Office Roku

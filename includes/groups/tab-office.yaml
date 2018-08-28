@@ -1,0 +1,17 @@
+office:
+  name: Office
+  view: yes
+  entities:
+    - group.office_roku
+    - group.office_camera
+
+office_roku:
+  name: Office Roku
+  entities:
+    - media_player.lai
+
+
+office_camera:
+  name: Office Camera
+  entities:
+    - camera.office_camera

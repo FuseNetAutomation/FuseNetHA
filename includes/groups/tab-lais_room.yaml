@@ -1,0 +1,5 @@
+lais_room:
+  name: Lai's Room
+  view: yes
+  entities:
+    - media_player.lais_room

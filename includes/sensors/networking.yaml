@@ -1,0 +1,33 @@
+  - platform: speedtest
+    second: 10
+    monitored_conditions:
+      - ping
+      - download
+      - upload
+
+  - platform: fastdotcom
+
+  - platform: rest
+    resource: https://derf.us/ip/
+    value_template: '{{ value_json.ip }}'
+    method: GET
+    name: Home IP
+
+  - platform: qnap
+    host: 192.168.173.100
+    username: admin
+    password: NNaaweTj55%%55
+    monitored_conditions:
+      - status
+      - memory_percent_used
+      - system_temp
+      - cpu_usage
+      - cpu_temp
+      - network_link_status
+      - network_tx
+      - network_rx
+      - drive_temp
+      - volume_size_free
+      - volume_size_used
+      - drive_smart_status
+      - volume_percentage_used

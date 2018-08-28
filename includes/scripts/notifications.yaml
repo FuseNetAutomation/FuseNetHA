@@ -1,0 +1,6 @@
+lais_bedtime_notification:
+  alias: Lai's TV Off
+  sequence:
+    - service: notify.android
+      data:
+        message: Lai's TV is Off for the Night

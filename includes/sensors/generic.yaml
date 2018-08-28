@@ -1,0 +1,6 @@
+- platform: template
+  sensors:
+    garagedoorstatus:
+      friendly_name: "Garage Door Status"
+      icon_template: "mdi:home"
+      value_template: "{%if states.cover.garage.state == 'closed' %}Closed{% elif states.cover.garage.state == 'open' %}Open{% endif %}"

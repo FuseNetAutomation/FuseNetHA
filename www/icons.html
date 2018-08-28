@@ -1,0 +1,33 @@
+<html>
+
+<head>
+  <script>
+
+    function contains(selector, text) {
+      var elements = document.querySelectorAll(selector);
+      return Array.prototype.filter.call(elements, function(element){
+        return RegExp(text).test(element.textContent);
+      });
+    }
+
+    (function () {
+
+      let metaContent = document.querySelectorAll("meta[content^='/static/'");
+      metaContent.forEach(x => {
+        x.content = x.content.replace('/static/', '/local/');
+      });
+
+      document.title = 'FuseNet Automation'
+
+      let linkHref = document.querySelector("link[rel='icon'");
+      linkHref.href = linkHref.href.replace('/static/', '/local/');
+
+      let linkManifest = document.querySelector("link[rel='manifest'");
+      linkManifest.href = "/local/icons/manifest.json";
+
+      let appleTouchIcon = document.querySelector("link[rel='apple-touch-icon'");
+      appleTouchIcon.href = linkHref.href.replace('/static/', '/local/');
+
+
+    })();
+  </script>

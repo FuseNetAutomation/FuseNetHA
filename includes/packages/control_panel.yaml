@@ -1,0 +1,112 @@
+## Control Panel Module
+
+## About state-card-tiles
+## Original forum thread: https://community.home-assistant.io/t/custom-ui-button-panel/29513
+## Official repo: https://github.com/c727/home-assistant-tiles
+
+## Useful links
+## Easy way to generate image for a tile: https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html
+## Color blend: https://meyerweb.com/eric/tools/color-blend/
+
+##################################################
+## Customize
+##################################################
+
+homeassistant:
+  customize:
+
+    # Office Roku
+    input_text.remote_control_office:
+      custom_ui_state_card: state-card-tiles
+      config:
+        columns: 3
+        row_height: 75px
+        column_width: 62px
+        gap: 15px
+        color: '#24292e'
+        color_on: '#24292e'
+        color_off: '#24292e'
+        entities:
+          # Line 1
+          - entity: switch.office_tv_home
+            icon: mdi:home
+            column: 1
+            row: 1
+
+    # Lais Roku
+    input_text.remote_control_lai:
+      custom_ui_state_card: state-card-tiles
+      config:
+        columns: 3
+        row_height: 75px
+        column_width: 62px
+        gap: 15px
+        color: '#24292e'
+        color_on: '#24292e'
+        color_off: '#24292e'
+        entities:
+          # Line 1
+          - entity: switch.lai_tv_power
+            icon: :mdi:power
+            column: 1
+            row: 1
+          - entity: switch.lai_tv_home
+            icon: mdi:home
+            column: 2
+            row: 1
+
+
+##################################################
+## Groups
+##################################################
+
+group:
+  remote_control_office:
+    name: Office Roku
+    entities:
+      - input_text.remote_control_office
+
+  remote_control_lai:
+    name: Lai's Roku
+    entities:
+      - input_text.remote_control_lai
+
+
+
+##################################################
+## Scripts
+##################################################
+
+input_text:
+  command:
+    name: Button
+  remote_control_office:
+    name: remote
+  remote_control_lai:
+    name: remote
+
+##################################################
+## Switches
+##################################################
+switch:
+  - platform: command_line
+    switches:
+      # Office
+      office_tv_power:
+        command_on: 'curl -X POST http://192.168.173.4:8060/keypress/PowerOn'
+        command_off: 'curl -X POST http://192.168.173.4:8060/keypress/PowerOff'
+        command_state: 'curl -s GET http://192.168.173.4:8060/query/device-info | grep power-mode | sed -e "s:<power-mode>DisplayOff</power-mode>:OFF:" -e "s:<power-mode>PowerOn</power-mode>:ON:"'
+        value_template: '{{ value == "ON" }}'
+      office_tv_home:
+        command_on: 'curl -X POST http://192.168.173.4:8060/keypress/home'
+        command_off: 'curl -X POST http://192.168.173.4:8060/keypress/home'
+
+      # Lai's TV
+      lai_tv_power:
+        command_on: 'curl -X POST http://192.168.173.7:8060/keypress/PowerOn'
+        command_off: 'curl -X POST http://192.168.173.7:8060/keypress/PowerOff'
+        command_state: 'curl -s GET http://192.168.173.7:8060/query/device-info | grep power-mode | sed -e "s:<power-mode>DisplayOff</power-mode>:OFF:" -e "s:<power-mode>PowerOn</power-mode>:ON:"'
+        value_template: '{{ value == "ON" }}'
+      lai_tv_home:
+        command_on: 'curl -X POST http://192.168.173.7:8060/keypress/home'
+        command_off: 'curl -X POST http://192.168.173.7:8060/keypress/home'

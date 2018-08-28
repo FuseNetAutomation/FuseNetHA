@@ -1,0 +1,27 @@
+climate:
+  name: Climate
+  view: yes
+  icon: mdi:thermometer
+  entities:
+    - group.hvac
+    - group.heatpump
+    - group.ecobee
+
+
+hvac:
+  name: Current Conditions
+  entities:
+    - climate.hvac
+    - climate.hvac
+    - climate.hvac
+
+
+ecobee:
+  name: Ecobee
+  entities:
+    - climate.ecobee
+
+heatpump:
+  name: Heat Pump
+  entities:
+    - climate.heatpump

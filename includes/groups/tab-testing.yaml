@@ -1,0 +1,7 @@
+testing:
+  name: Testing
+  view: yes
+  icon: mdi:alert-outline
+  entities:
+    - group.remote_control_office
+    - group.remote_control_lai

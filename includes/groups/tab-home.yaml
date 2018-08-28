@@ -1,0 +1,32 @@
+default_view:
+  name: Home
+  icon: mdi:home-assistant
+  view: yes
+  entities:
+    - group.location
+    - group.weather
+    - group.garage
+    - group.lighting
+
+weather:
+  name: Weather
+  entities:
+    - input_boolean.weather
+
+garage:
+  name: Garage
+  entities:
+    - sensor.garagedoorstatus
+    - cover.garage
+
+lighting:
+  name: House Lighting
+  entities:
+    - switch.livingroom_lamps
+    - switch.master_lamps
+    - switch.outside_lamps
+
+location:
+  name: Location
+  entities:
+    - device_tracker.a0c9a0dbe410
