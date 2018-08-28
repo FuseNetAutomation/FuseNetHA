@@ -1,11 +1,1 @@
-- alias: lais_bedtime_automation
-  trigger:
-  - event_data:
-      action: open_door
-    event_type: fcm_android_notifications.clicked
-    platform: event
-  condition: []
-  action:
-  - data:
-      entity_id: light.front_door
-    service: light.turn_on
+
