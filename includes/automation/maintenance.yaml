@@ -1,0 +1,39 @@
+#########################################################
+#                                                       #
+#             FURNACE FILETER REMINDER                  #
+#                                                       #
+#########################################################
+
+- alias: "Furnace Filter Reminder"
+  trigger:
+    platform: sun
+    event: sunrise
+  condition:
+    condition: template
+    value_template: '{{ now().day == 2}}'
+  action:
+    service: notify.android
+    data:
+      title: "Check Furnace Filter and Replace if Needed"
+      message: "Furnace filter is 16x25x1 if you need to buy one"
+
+
+#########################################################
+#                                                       #
+#                 TRASH DAY REMINDER                    #
+#                                                       #
+#########################################################
+
+- alias: Trash Day Reminder
+  trigger:
+    platform: time
+    at: '18:00:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+  action:
+    service: notify.android
+    data:
+      title: "Today Is Trash Day"
+      message: "Take the trash and recycling to the curb"

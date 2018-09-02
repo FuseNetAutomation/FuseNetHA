@@ -114,5 +114,5 @@ group.settings:
   order: 7
 
 # Media Players
-media_player.lai:
-  friendly_name: Office Roku
+media_player.living_room_roku:
+  friendly_name: Living Room Roku
