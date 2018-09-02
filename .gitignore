@@ -1,6 +1,14 @@
 /home-assistant_v2.db
-
 /home-assistant.log
+/home-assistant_v2.db-shm
+/home-assistant_v2.db-wal
+.gitignore
+
+.gitattributes
+
+/known_devices.yaml
+
+/fcm_android_registrations.conf
 
 /plex.conf
 /secrets.yaml

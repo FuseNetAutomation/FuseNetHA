@@ -1,45 +1,10 @@
-media_player.living_room:
+media_player.living_room_roku:
   config_entry_id:
-  name:
+  name: living_room_roku
   platform: roku
-  unique_id: YT005N674144
+  unique_id: '632615185897'
 media_player.lais_room:
   config_entry_id:
   name:
   platform: roku
   unique_id: YK009L484173
-media_player.living_room_2:
-  config_entry_id:
-  name: Plex Server
-  platform: plex
-  unique_id: 4b9699adc3b67802d53cc48c6c0e8670
-media_player.firefox:
-  config_entry_id:
-  name:
-  platform: plex
-  unique_id: 27y6qrlkkmi2kttqy11xbjpl
-media_player.galaxy_s8:
-  config_entry_id:
-  name:
-  platform: plex
-  unique_id: 287b9b5a37ebaa91-com-plexapp-android
-media_player.chrome:
-  config_entry_id:
-  name:
-  platform: plex
-  unique_id: pguvylbccdn9nbrhv6qjtsxo
-media_player.lai:
-  config_entry_id:
-  name:
-  platform: roku
-  unique_id: YG006E372659
-media_player.lai_2:
-  config_entry_id:
-  name:
-  platform: plex
-  unique_id: 9ad51acb99c1e26b433de6e42842bf59
-media_player.office_roku:
-  config_entry_id:
-  name:
-  platform: roku
-  unique_id: '632615185897'

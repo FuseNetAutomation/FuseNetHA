@@ -1,1 +1,23 @@
-
+- id: '1535542391115'
+  alias: Lai's Bedtime
+  trigger:
+  - at: '21:00:00'
+    platform: time
+  condition:
+  - condition: time
+    weekday:
+    - sun
+    - mon
+    - tue
+    - wed
+    - thu
+  action:
+  - data:
+      message: It's Lai's Bedtime
+    service: notify.android
+  - data:
+      entity_id: switch.lai_tv_power
+    service: switch.turn_off
+  - data:
+      message: Lai's TV has been turned off
+    service: notify.telegram

@@ -1,17 +1,16 @@
-
-f29fc2d3d3b3:
+a0c9a0dbe410:
   hide_if_away: false
   icon:
-  mac: F2:9F:C2:D3:D3:B3
-  name: f29fc2d3d3b3
-  picture:
+  mac: A0:C9:A0:DB:E4:10
+  name: Nick
+  picture: https://scontent-ort2-2.xx.fbcdn.net/v/t1.0-1/c0.0.240.240/p240x240/33089666_10157593030718975_5115570009636077568_n.jpg?_nc_cat=0&oh=f20a93c880e1cc8c0f819358fc0cb4ca&oe=5C0688EC
   track: true
 
-d481ca544d94:
+8c3bad3c0456:
   hide_if_away: false
   icon:
-  mac: D4:81:CA:54:4D:94
-  name: d481ca544d94
+  mac: 8C:3B:AD:3C:04:56
+  name: 8c3bad3c0456
   picture:
   track: true
 
@@ -23,35 +22,19 @@ d481ca544d94:
   picture:
   track: true
 
-f09fc2add23d:
+d481ca544d94:
   hide_if_away: false
   icon:
-  mac: F0:9F:C2:AD:D2:3D
-  name: f09fc2add23d
+  mac: D4:81:CA:54:4D:94
+  name: d481ca544d94
   picture:
   track: true
 
-a0c9a0dbe410:
+080581c8d839:
   hide_if_away: false
   icon:
-  mac: A0:C9:A0:DB:E4:10
-  name: Nick
-  picture: https://scontent-ort2-2.xx.fbcdn.net/v/t1.0-1/c0.0.240.240/p240x240/33089666_10157593030718975_5115570009636077568_n.jpg?_nc_cat=0&oh=f20a93c880e1cc8c0f819358fc0cb4ca&oe=5C0688EC
-  track: true
-
-6452991c0e69:
-  hide_if_away: false
-  icon:
-  mac: 64:52:99:1C:0E:69
-  name: 6452991c0e69
-  picture:
-  track: true
-
-f09fc2d42e86:
-  hide_if_away: false
-  icon:
-  mac: F0:9F:C2:D4:2E:86
-  name: f09fc2d42e86
+  mac: 08:05:81:C8:D8:39
+  name: 080581c8d839
   picture:
   track: true
 
@@ -60,22 +43,6 @@ f09fc2d42e86:
   icon:
   mac: 10:08:B1:E4:92:B7
   name: 1008b1e492b7
-  picture:
-  track: true
-
-c83a6b330326:
-  hide_if_away: false
-  icon:
-  mac: C8:3A:6B:33:03:26
-  name: c83a6b330326
-  picture:
-  track: true
-
-8c3bad3c0456:
-  hide_if_away: false
-  icon:
-  mac: 8C:3B:AD:3C:04:56
-  name: 8c3bad3c0456
   picture:
   track: true
 
@@ -95,11 +62,11 @@ c83a6b330326:
   picture:
   track: true
 
-080581c8d839:
+606dc7ae7499:
   hide_if_away: false
   icon:
-  mac: 08:05:81:C8:D8:39
-  name: 080581c8d839
+  mac: 60:6D:C7:AE:74:99
+  name: 606dc7ae7499
   picture:
   track: true
 
@@ -108,13 +75,5 @@ a407b6100617:
   icon:
   mac: A4:07:B6:10:06:17
   name: a407b6100617
-  picture:
-  track: true
-
-606dc7ae7499:
-  hide_if_away: false
-  icon:
-  mac: 60:6D:C7:AE:74:99
-  name: 606dc7ae7499
   picture:
   track: true

@@ -20,7 +20,7 @@ updater:
 climate:
   platform: demo
 
-discovery:
+# discovery:
 
 hello_state:
 
@@ -41,7 +41,7 @@ telegram_bot:
 notify:
   - name: android
     platform: fcm-android
-    
+
   - name: telegram
     platform: telegram
     chat_id: 514565869
