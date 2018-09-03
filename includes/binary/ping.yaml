@@ -13,13 +13,17 @@
 # Containers
   - platform: ping
     host: 10.0.3.1
-    name: Home Assistant Container
+    name: Home Assistant
+    scan_interval: 30
   - platform: ping
     host: 10.0.3.2
-    name: MQTT Container
+    name: Gitlab
+    scan_interval: 30
   - platform: ping
     host: 10.0.3.4
-    name: Postgres Container
+    name: Postgres
+    scan_interval: 30
   - platform: ping
     host: 10.0.3.5
-    name: Gitlab Container
+    name: MQTT
+    scan_interval: 30

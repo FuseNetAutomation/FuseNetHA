@@ -18,4 +18,9 @@ system:
 automations:
   name: Automations
   entities:
-    - group.all_automations
+    - automation.alert_when_a_container_goes_offline
+    - automation.furnace_filter_reminder
+    - automation.lais_bedtime
+    - automation.send_notification_upon_failed_login_attempt
+    - automation.set_theme_at_startup
+    - automation.trash_day_reminder

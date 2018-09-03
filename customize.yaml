@@ -34,19 +34,19 @@ sensor.home_ip:
 
 
 # Containers
-binary_sensor.home_assistant_container:
+binary_sensor.home_assistant:
   icon: mdi:docker
   templates:
     icon_color: "if (state === 'on') return 'rgb(50,205,50)'; else return 'rgb(220,20,60)';"
-binary_sensor.mqtt_container:
+binary_sensor.mqtt:
   icon: mdi:docker
   templates:
     icon_color: "if (state === 'on') return 'rgb(50,205,50)'; else return 'rgb(220,20,60)';"
-binary_sensor.gitlab_container:
+binary_sensor.gitlab:
   icon: mdi:docker
   templates:
     icon_color: "if (state === 'on') return 'rgb(50,205,50)'; else return 'rgb(220,20,60)';"
-binary_sensor.postgres_container:
+binary_sensor.postgres:
   icon: mdi:docker
   templates:
     icon_color: "if (state === 'on') return 'rgb(50,205,50)'; else return 'rgb(220,20,60)';"

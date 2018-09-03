@@ -61,10 +61,13 @@ frontend:
     - /local/custom_ui/custom-weather-card.html
     - /local/icons.html
     - /local/custom_ui/state-card-tiles.html
+    - /local/custom_ui/state-card-mini-media-player.html
   extra_html_url_es5:
     - /local/custom_ui/state-card-custom-ui-es5.html
     - /local/custom_ui/custom-weather-card.html
     - /local/icons.html
+    - /local/custom_ui/state-card-mini-media-player_es5.html
+    
   themes: !include_dir_merge_named themes
 
 group: !include_dir_merge_named includes/groups

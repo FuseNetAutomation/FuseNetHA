@@ -1,0 +1,11 @@
+homeassistant:
+  customize:
+    input_text.media_living_room:
+      custom_ui_state_card: state-card-mini-media-player
+      config:
+        player: media_player.living_room_roku
+
+
+input_text:
+  media_living_room:
+    name: Everywhere

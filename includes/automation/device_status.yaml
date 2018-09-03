@@ -3,32 +3,37 @@
 #         NOTIFY IF DOCKER CONTAINER OFFLINE            #
 #                                                       #
 #########################################################
-
-- alias: Alert when a container goes offline
-  initial_state: 'on'
+- id: '1535983262600'
+  alias: Alert when a container goes offline
   trigger:
-    - platform: state
-      entity_id:
-        - binary_sensor.gitlab_container
-        - binary_sensor.postgres_container
-        - binary_sensor.mqtt_container
-        - binary_sensor.home_assistant_container
-      to: 'off'
-      for:
-        minutes: 1
+  - entity_id: binary_sensor.gitlab
+    from: 'on'
+    platform: state
+    to: 'off'
+  - entity_id: binary_sensor.mqtt
+    from: 'on'
+    platform: state
+    to: 'off'
+  - entity_id: binary_sensor.home_assistant
+    from: 'on'
+    platform: state
+    to: 'off'
+  - entity_id: binary_sensor.postgres
+    from: 'on'
+    platform: state
+    to: 'off'
   condition:
-    condition: and
-    conditions:
-      - condition: template
-        value_template: >
-          {% if states.automation.alert_when_a_container_goes_offline.last_triggered is not none %}
-            {% if as_timestamp(now()) | int   -  as_timestamp(states.automation.alert_when_a_container_goes_offline.attributes.last_triggered) | int > 3600 %} true {% else %} false
-            {% endif %}
-          {% else %}
-          false
-          {% endif %}
+  - condition: and
+    condition: template
+    value_template:  >
+      {% if states.automation.alert_when_a_container_goes_offline.last_triggered is not none %}
+        {% if as_timestamp(now()) | int   -  as_timestamp(states.automation.alert_when_a_container_goes_offline.attributes.last_triggered) | int > 3600 %} true {% else %} false
+        {% endif %}
+      {% else %}
+      false
+      {% endif %}
   action:
-    - service: notify.android
-      data_template:
-        message: 'Docker container for {{ trigger.to_state.name }} is not running. Please check the status of this container as some features may stop functioning.'
-        title: Container Alert
+  - data_template:
+      message: 'Docker container for {{ trigger.to_state.name }} is not running. Please check the status of this container as some features may stop functioning.'
+      title: Container Alert
+    service: notify.telegram

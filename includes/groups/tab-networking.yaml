@@ -42,10 +42,10 @@ device_status:
 docker_status:
   name: Container Status
   entities:
-    - binary_sensor.home_assistant_container
-    - binary_sensor.mqtt_container
-    - binary_sensor.gitlab_container
-    - binary_sensor.postgres_container
+    - binary_sensor.home_assistant
+    - binary_sensor.mqtt
+    - binary_sensor.gitlab
+    - binary_sensor.postgres
 
 
 

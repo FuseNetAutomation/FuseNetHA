@@ -4,18 +4,19 @@
 #                                                       #
 #########################################################
 
-- alias: "Furnace Filter Reminder"
+- id: '1535982648283'
+  alias: Furnace Filter Reminder
   trigger:
-    platform: sun
-    event: sunrise
+  - at: 08:00:00
+    platform: time
   condition:
-    condition: template
-    value_template: '{{ now().day == 2}}'
+  - condition: template
+    value_template: '{{ now().day == 1}}'
   action:
-    service: notify.android
-    data:
-      title: "Check Furnace Filter and Replace if Needed"
-      message: "Furnace filter is 16x25x1 if you need to buy one"
+  - data:
+      message: Furnace filter is 16x25x1 if you need to buy one
+      title: Check Furnace Filter and Replace if Needed
+    service: notify.telegram
 
 
 #########################################################
@@ -24,16 +25,17 @@
 #                                                       #
 #########################################################
 
-- alias: Trash Day Reminder
+- id: '1535982257361'
+  alias: Trash Day Reminder
   trigger:
+  - at: '18:00:00'
     platform: time
-    at: '18:00:00'
   condition:
     condition: time
     weekday:
       - mon
   action:
-    service: notify.android
-    data:
-      title: "Today Is Trash Day"
-      message: "Take the trash and recycling to the curb"
+  - data:
+      message: Take the trash and recycling to the curb
+      title: Tommorow Is Trash Day
+    service: notify.telegram
