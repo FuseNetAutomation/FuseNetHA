@@ -4,7 +4,9 @@ settings:
   icon: mdi:settings
   entities:
       - group.system
-      - group.automations
+      - group.automation_alerts
+      - group.automation_reminders
+      - group.automation_misc
 
 
 
@@ -15,12 +17,20 @@ system:
     - sensor.since_last_boot_template
     - sensor.version
 
-automations:
-  name: Automations
+automation_alerts:
+  name: Critical Alerts
   entities:
     - automation.alert_when_a_container_goes_offline
-    - automation.furnace_filter_reminder
-    - automation.lais_bedtime
     - automation.send_notification_upon_failed_login_attempt
-    - automation.set_theme_at_startup
+    - automation.lais_bedtime
+
+automation_reminders:
+  name: Reminders
+  entities:
     - automation.trash_day_reminder
+    - automation.furnace_filter_reminder
+
+automation_misc:
+  name: Misc
+  entities:
+    - automation.set_theme_at_startup
