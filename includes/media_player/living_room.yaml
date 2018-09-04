@@ -1,2 +1,6 @@
 - platform: roku
+  host: 192.168.173.2
+- platform: roku
   host: 192.168.173.4
+# - platform: roku
+#   host: 192.168.173.7

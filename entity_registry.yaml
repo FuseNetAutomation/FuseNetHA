@@ -1,0 +1,15 @@
+media_player.living_room_roku:
+  config_entry_id:
+  name: living_room_roku
+  platform: roku
+  unique_id: '632615185897'
+media_player.lais_room:
+  config_entry_id:
+  name:
+  platform: roku
+  unique_id: YK009L484173
+media_player.office:
+  config_entry_id:
+  name:
+  platform: roku
+  unique_id: YT005N674144
